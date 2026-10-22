@@ -149,6 +149,10 @@
           "features": []
         },
         {
+          "component": "pcre2",
+          "features": []
+        },
+        {
           "component": "typescript",
           "features": []
         },
