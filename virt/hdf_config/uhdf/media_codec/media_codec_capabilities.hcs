@@ -10,19 +10,23 @@ root {
         // allocateMask: 0x08, Output buffer allocated by an external user.
 
         VideoHwEncoders {
-            /* node name explanation -- HDF_video_hw_enc_avc_rk：
+        }
+        VideoHwDecoders {
+        }
+        VideoSwEncoders {
+            /* node name explanation -- HDF_video_sw_enc_avc_virt：
             **
-            **    HDF____________video__________________hw____________________enc____________avc_______rk
+            **    HDF____________video__________________sw____________________enc____________avc_____virt
             **     |               |                    |                      |              |        |
             ** HDF or OMX    video or audio    hardware or software    encoder or decoder    mime    vendor
             */
-            HDF_video_hw_enc_avc_rk {
+            HDF_video_sw_enc_avc_virt {
                 role = 1;
                 type = 1;
-                name = "OMX.rk.video_encoder.avc";
+                name = "OMX.virt.video_encoder.avc";
                 supportProfiles = [1, 32768, 2, 32768, 8, 32768];
                 maxInst = 4;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -46,13 +50,13 @@ root {
                 maxFrameRate = 60;
                 canSwapWidthHeight = true;
             }
-            HDF_video_hw_enc_hevc_rk {
+            HDF_video_sw_enc_hevc_virt {
                 role = 2;
                 type = 1;
-                name = "OMX.rk.video_encoder.hevc";
+                name = "OMX.virt.video_encoder.hevc";
                 supportProfiles = [1, 4096, 2, 4096, 4096, 4096];
                 maxInst = 4;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -77,14 +81,14 @@ root {
                 canSwapWidthHeight = true;
             }
         }
-        VideoHwDecoders {
-            HDF_video_hw_dec_avc_rk {
+        VideoSwDecoders {
+            HDF_video_sw_dec_avc_virt {
                 role = 1;
                 type = 0;
-                name = "OMX.rk.video_decoder.avc";
+                name = "OMX.virt.video_decoder.avc";
                 supportProfiles = [1, 32768, 2, 32768, 8, 32768];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -108,13 +112,13 @@ root {
                 maxFrameRate = 60;
                 canSwapWidthHeight = true;
             }
-            HDF_video_hw_dec_mpeg2_rk {
+            HDF_video_sw_dec_mpeg2_virt {
                 role = 0xFFFFFFFF;
                 type = 0;
-                name = "OMX.rk.video_decoder.m2v";
+                name = "OMX.virt.video_decoder.m2v";
                 supportProfiles = [0, 3, 1, 3];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -137,13 +141,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_v8p_rk {
+            HDF_video_sw_dec_v8p_virt {
                 role = 0xFFFFFFFF;
                 type = 0;
-                name = "OMX.rk.video_decoder.vp8";
+                name = "OMX.virt.video_decoder.vp8";
                 supportProfiles = [];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -166,13 +170,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_h263_rk {
+            HDF_video_sw_dec_h263_virt {
                 role = 0xFFFFFFFF;
                 type = 0;
-                name = "OMX.rk.video_decoder.h263";
+                name = "OMX.virt.video_decoder.h263";
                 supportProfiles = [1, 1, 1, 2, 1, 4, 1, 16, 8, 1, 8, 2, 8, 4, 8, 16];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -195,13 +199,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_m4v_rk {
+            HDF_video_sw_dec_m4v_virt {
                 role = 3;
                 type = 0;
-                name = "OMX.rk.video_decoder.m4v";
+                name = "OMX.virt.video_decoder.m4v";
                 supportProfiles = [1, 1, 1, 2, 1, 4, 1, 8, 1, 16];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -224,13 +228,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_flv_rk {
+            HDF_video_sw_dec_flv_virt {
                 role = 0xFFFFFFFF;
                 type = 0;
-                name = "OMX.rk.video_decoder.flv1";
+                name = "OMX.virt.video_decoder.flv1";
                 supportProfiles = [];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -253,13 +257,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_mjpeg_rk {
+            HDF_video_sw_dec_mjpeg_virt {
                 role = 0;
                 type = 0;
-                name = "OMX.rk.video_decoder.mjpeg";
+                name = "OMX.virt.video_decoder.mjpeg";
                 supportProfiles = [];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -282,13 +286,13 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-            HDF_video_hw_dec_hevc_rk {
+            HDF_video_sw_dec_hevc_virt {
                 role = 2;
                 type = 0;
-                name = "OMX.rk.video_decoder.hevc";
+                name = "OMX.virt.video_decoder.hevc";
                 supportProfiles = [1, 1, 1, 4, 1, 16, 1, 64, 1, 256, 1, 1024, 1, 4096, 1, 16384, 1, 65536, 2, 65536];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -312,13 +316,13 @@ root {
                 maxFrameRate = 0;
                 canSwapWidthHeight = true;
             }
-            HDF_video_hw_dec_vp9_rk {
+            HDF_video_sw_dec_vp9_virt {
                 role = 4;
                 type = 0;
-                name = "OMX.rk.video_decoder.vp9";
+                name = "OMX.virt.video_decoder.vp9";
                 supportProfiles = [1, 1, 1, 2, 1, 4, 1, 16, 1, 32, 1, 64, 1, 256, 1, 1024, 1, 2048, 1, 4096, 1, 8192];
                 maxInst = 6;
-                isSoftwareCodec = false;
+                isSoftwareCodec = true;
                 processModeMask = [];
                 capsMask = [0x01];
                 minBitRate = 1;
@@ -341,10 +345,6 @@ root {
                 minFrameRate = 0;
                 maxFrameRate = 0;
             }
-        }
-        VideoSwEncoders {
-        }
-        VideoSwDecoders {
         }
         AudioHwEncoders {
         }

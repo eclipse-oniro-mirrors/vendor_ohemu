@@ -9,9 +9,9 @@ root {
                                         the same physical light light01. */
                     lightName = "battery";
                     lightNumber = 1;
-                    busRNum = 147;    // Red corresponding GPIO.
-                    busGNum = 146;    // Green corresponding GPIO.
-                    busBNum = 149;    // Blue corresponding GPIO.
+                    /* No gpio backend on the virtual platform: busR/G/BNum are left
+                       unconfigured so the kernel driver skips gpio setup and keeps the
+                       light purely simulated. */
                     defaultBrightness = 0X00FFFFFF;    /* System default brightness value.
                                                         B: 0-7bit, R: 8-15bit, G: 16-23, extended bit: 24-31bit. */
                     onTime = 50;    /* The minimum duration (in milliseconds) that the system supports

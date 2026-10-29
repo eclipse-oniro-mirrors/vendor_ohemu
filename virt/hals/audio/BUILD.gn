@@ -59,6 +59,44 @@ ohos_prebuilt_etc("hdf_alsa_adapter_json") {
   part_name = virt_part_name
 }
 
+# ALSA global configuration for the emulated ES1370 sound card.
+# alsa-lib on OHOS is built with ALSA_CONFIG_DIR pointing to
+# /vendor/etc/audio/alsa/share, so the configuration files must be
+# installed into the vendor image at that location.
+_alsa_conf_dir = "//third_party/alsa-lib/src/conf"
+
+ohos_prebuilt_etc("alsa_conf") {
+  source = "$_alsa_conf_dir/alsa.conf"
+  subsystem_name = virt_subsystem_name
+  relative_install_dir = "audio/alsa/share"
+  install_images = [ chipset_base_dir ]
+  part_name = virt_part_name
+}
+
+ohos_prebuilt_etc("alsa_smixer_conf") {
+  source = "$_alsa_conf_dir/smixer.conf"
+  subsystem_name = virt_subsystem_name
+  relative_install_dir = "audio/alsa/share"
+  install_images = [ chipset_base_dir ]
+  part_name = virt_part_name
+}
+
+ohos_prebuilt_etc("alsa_cards_aliases_conf") {
+  source = "$_alsa_conf_dir/cards/aliases.conf"
+  subsystem_name = virt_subsystem_name
+  relative_install_dir = "audio/alsa/share/cards"
+  install_images = [ chipset_base_dir ]
+  part_name = virt_part_name
+}
+
+ohos_prebuilt_etc("alsa_cards_ens1370_conf") {
+  source = "$_alsa_conf_dir/cards/ENS1370.conf"
+  subsystem_name = virt_subsystem_name
+  relative_install_dir = "audio/alsa/share/cards"
+  install_images = [ chipset_base_dir ]
+  part_name = virt_part_name
+}
+
 ohos_prebuilt_etc("hdf_alsa_paths_json") {
   source = "alsa_paths.json"
   relative_install_dir = "hdfconfig"
@@ -78,6 +116,10 @@ ohos_prebuilt_etc("audio_policy_config_new") {
 
 group("hdf_audio_config") {
   deps = [
+    ":alsa_cards_aliases_conf",
+    ":alsa_cards_ens1370_conf",
+    ":alsa_conf",
+    ":alsa_smixer_conf",
     ":audio_policy_config",
     ":audio_policy_config_new",
     ":hdf_audio_effect_json",

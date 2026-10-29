@@ -13,5 +13,5 @@
 #include "watchdog_test_config.hcs"
 
 root {
-    module = "hisilicon,hi35xx_chip";
+    module = "edu,virt_chip";
 }
