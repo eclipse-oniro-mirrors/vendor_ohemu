@@ -13,7 +13,7 @@
 
 declare_args() {
   app_ui_test = false
-  app_ability_test = true
+  app_ability_test = false
 }
 
 static_library("example") {
