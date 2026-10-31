@@ -126,7 +126,6 @@
         {
           "component": "drivers_peripheral_audio",
           "features": [
-            "drivers_peripheral_audio_feature_full_test_suite = true",
             "drivers_peripheral_audio_feature_alsa_lib = true",
             "drivers_peripheral_audio_feature_effect = true",
             "drivers_peripheral_audio_vendor_alsa_path = \"//device/qemu/common/virt_full/audio_alsa\""

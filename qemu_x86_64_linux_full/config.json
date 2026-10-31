@@ -39,7 +39,9 @@
         },
         {
           "component": "alsa-lib",
-          "features": []
+          "features": [
+            "alsa_lib_feature_config_enable = true"
+          ]
         },
         {
           "component": "alsa-utils",

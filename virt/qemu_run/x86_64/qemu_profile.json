@@ -14,7 +14,10 @@
   "memory_mib": 4096,
   "kernel": "bzImage",
   "initrd": "ramdisk.img",
-  "common_args": [],
+  "common_args": [
+    "-audiodev", "driver=none,id=snd0",
+    "-device", "ES1370,audiodev=snd0"
+  ],
   "graphics": {
     "supported": true,
     "device_args": ["-vga", "none", "-device", "virtio-gpu-pci"]
