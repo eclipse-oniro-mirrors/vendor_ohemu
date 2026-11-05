@@ -867,7 +867,7 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "RKFace#0";
+                peerPortNodeName = "Face#0";
                 direction = 1;
             }
         }
@@ -887,8 +887,8 @@ root {
                 direction = 1;
             }
         }
-        RKFace :: node_spec {
-            name = "RKFace#0";
+        Face :: node_spec {
+            name = "Face#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -921,7 +921,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "RKFace#0";
+                peerPortNodeName = "Face#0";
                 direction = 0;
             }
         }
@@ -1380,7 +1380,7 @@ root {
             out_port_0 :: port_spec {
                 name = "out0";
                 peerPortName = "in0";
-                peerPortNodeName = "RKFace#0";
+                peerPortNodeName = "Face#0";
                 direction = 1;
             }
         }
@@ -1448,8 +1448,8 @@ root {
                 direction = 1;
             }
         }
-        RKFace :: node_spec {
-            name = "RKFace#0";
+        Face :: node_spec {
+            name = "Face#0";
             status = "new";
             in_port_0 :: port_spec {
                 name = "in0";
@@ -1493,7 +1493,7 @@ root {
             in_port_0 :: port_spec {
                 name = "in0";
                 peerPortName = "out0";
-                peerPortNodeName = "RKFace#0";
+                peerPortNodeName = "Face#0";
                 direction = 0;
             }
         }
