@@ -19,6 +19,17 @@
   ],
   "subsystems": [
     {
+      "subsystem": "build",
+      "components": [
+        {
+          "component": "build_framework",
+          "features": [
+            "build_framework_enable_incremental_build = true"
+          ]
+        }
+      ]
+    },
+    {
       "subsystem": "thirdparty",
       "components": [
         {
