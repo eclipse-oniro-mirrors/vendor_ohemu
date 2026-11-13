@@ -25,12 +25,12 @@
   ],
   "network": {"device": "virtio-net-device"},
   "drives": [
-    {"id": "updater", "file": "updater.img", "base_format": "raw", "drive_options": ["if=none", "id=updater"], "device": "virtio-blk-device", "device_options": ["drive=updater", "serial=updater"]},
-    {"id": "system", "file": "system.img", "base_format": "raw", "drive_options": ["if=none", "id=system"], "device": "virtio-blk-device", "device_options": ["drive=system", "serial=system"]},
-    {"id": "vendor", "file": "vendor.img", "base_format": "raw", "drive_options": ["if=none", "id=vendor"], "device": "virtio-blk-device", "device_options": ["drive=vendor", "serial=vendor"]},
-    {"id": "sys_prod", "file": "sys_prod.img", "base_format": "raw", "drive_options": ["if=none", "id=sys_prod"], "device": "virtio-blk-device", "device_options": ["drive=sys_prod", "serial=sys_prod"]},
-    {"id": "chip_prod", "file": "chip_prod.img", "base_format": "raw", "drive_options": ["if=none", "id=chip_prod"], "device": "virtio-blk-device", "device_options": ["drive=chip_prod", "serial=chip_prod"]},
-    {"id": "userdata", "file": "userdata.img", "base_format": "raw", "drive_options": ["if=none", "id=userdata"], "device": "virtio-blk-device", "device_options": ["drive=userdata", "serial=userdata"]}
+    {"id": "updater", "file": "updater.img", "base_format": "raw", "drive_options": ["if=none", "id=updater"], "device": "virtio-blk-device", "device_options": ["drive=updater", "serial=updater", "write-zeroes=off"]},
+    {"id": "system", "file": "system.img", "base_format": "raw", "drive_options": ["if=none", "id=system"], "device": "virtio-blk-device", "device_options": ["drive=system", "serial=system", "write-zeroes=off"]},
+    {"id": "vendor", "file": "vendor.img", "base_format": "raw", "drive_options": ["if=none", "id=vendor"], "device": "virtio-blk-device", "device_options": ["drive=vendor", "serial=vendor", "write-zeroes=off"]},
+    {"id": "sys_prod", "file": "sys_prod.img", "base_format": "raw", "drive_options": ["if=none", "id=sys_prod"], "device": "virtio-blk-device", "device_options": ["drive=sys_prod", "serial=sys_prod", "write-zeroes=off"]},
+    {"id": "chip_prod", "file": "chip_prod.img", "base_format": "raw", "drive_options": ["if=none", "id=chip_prod"], "device": "virtio-blk-device", "device_options": ["drive=chip_prod", "serial=chip_prod", "write-zeroes=off"]},
+    {"id": "userdata", "file": "userdata.img", "base_format": "raw", "drive_options": ["if=none", "id=userdata"], "device": "virtio-blk-device", "device_options": ["drive=userdata", "serial=userdata", "write-zeroes=off"]}
   ],
   "bootargs": [
     "default_boot_device=a003e00.virtio_mmio",
