@@ -342,6 +342,11 @@ bypass_bluetooth = [
   "hid",
   "pan",
   "socket",
+  "btservice",
+  "btservice_static",
+  "btpbap_pse_static",
+  "bluetooth_server_static",
+  "fuzztest_utils_static",
 ]
 
 # bluetoth_service : //foundation/communication/bluetooth_service
@@ -354,6 +359,7 @@ bypass_bluetooth_service = [
   "bluetooth_hdi_adapter",
   "btipc_static",
   "btipc_service",
+  "bt_vendor_service",
 ]
 
 #device_security_level : //base/security/device_security_level
