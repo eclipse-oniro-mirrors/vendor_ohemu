@@ -336,6 +336,10 @@
             {
                 "name" : "ohos.permission.GET_INSTALLED_BUNDLE_LIST",
                 "userCancellable" : false
+            },
+            {
+                "name" : "ohos.permission.ACCESS_BLUETOOTH",
+                "userCancellable" : false
             }
         ]
     },
